@@ -1,0 +1,17 @@
+**/lazy-lock.json
+.Identifier
+
+# AWS
+**/.aws/*
+!**/.aws/
+!**/.aws/config
+
+# Kubernetes
+**/.kube/*
+!**/.kube/
+!**/.kube/config
+
+# Others
+**/.docker/contexts
+**/.config/gcloud/
+**/.ssh/environment-*

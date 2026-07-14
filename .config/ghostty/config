@@ -1,0 +1,21 @@
+# Window settings
+window-inherit-working-directory = true
+window-theme = dark
+window-save-state = always
+# window-width = 1920
+# window-height = 1080
+theme = "Dracula+"
+
+# Mouse settings
+mouse-hide-while-typing = true
+copy-on-select = true
+
+# Font and cursor settings
+font-family = MesloLGDZ
+font-size = 15
+cursor-style = block
+
+# keyboard settings
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+macos-option-as-alt = true

@@ -1,0 +1,6 @@
+^\.git$
+^\.gitignore$
+^\.stow-global-ignore$
+^\.pre-commit-config\.yaml$
+^.*\.gitconfig$
+/Brewfile
