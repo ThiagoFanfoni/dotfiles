@@ -21,7 +21,6 @@ if OS.mac?
   cask 'music-decoy'
   cask 'onedrive'
   cask 'session-manager-plugin'
-  cask 'yt-music'
 end
 
 cask 'terraform-linters/tap/tflint'
