@@ -8,6 +8,7 @@ if OS.mac?
   brew 'mas'
 
   cask 'appcleaner'
+  cask 'balenaetcher'
   cask 'brave-browser'
   cask 'caffeine'
   cask 'codex'
