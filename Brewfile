@@ -2,6 +2,7 @@
 
 tap 'aws/tap'
 tap 'hashicorp/tap'
+tap 'siderolabs/tap'
 tap 'terraform-linters/tap'
 
 if OS.mac?
@@ -80,9 +81,9 @@ brew 'python'
 brew 'ripgrep'
 brew 'ruby'
 brew 'rust'
+brew 'siderolabs/tap/talosctl'
 brew 'sshpass'
 brew 'stow'
-brew 'talosctl'
 brew 'tectonic'
 brew 'terraform-docs'
 brew 'terragrunt'

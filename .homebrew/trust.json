@@ -3,11 +3,13 @@
     "terraform-linters/tap/tflint"
   ],
   "trustedformulae": [
-    "hashicorp/tap/terraform"
+    "hashicorp/tap/terraform",
+    "siderolabs/tap/talosctl"
   ],
   "trustedtaps": [
     "aws/tap",
     "hashicorp/tap",
+    "siderolabs/tap",
     "terraform-linters/tap"
   ]
 }
