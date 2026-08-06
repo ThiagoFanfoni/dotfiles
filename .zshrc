@@ -58,6 +58,10 @@ function aws-clear() {
   asp &>/dev/null
 }
 
+function lazygit() {
+  command lazygit --use-config-file="${HOME}/.config/lazygit/config.yml" "$@"
+}
+
 function aws-profile() {
   asp $(aws_profiles | fzf)
 }

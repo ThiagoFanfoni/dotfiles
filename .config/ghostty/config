@@ -4,7 +4,7 @@ window-theme = dark
 window-save-state = always
 # window-width = 1920
 # window-height = 1080
-theme = "Dracula+"
+theme = "TokyoNight Moon"
 
 # Mouse settings
 mouse-hide-while-typing = true
