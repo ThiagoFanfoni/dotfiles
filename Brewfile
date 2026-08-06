@@ -96,7 +96,9 @@ end
   tfsec
   tree-sitter-cli
   unzip
+  utftex
   viddy
+  wget
   whois
   yq
   zip
