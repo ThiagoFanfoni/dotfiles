@@ -8,6 +8,5 @@ return {
         package_uninstalled = "✗",
       },
     },
-    -- ensure_installed = {}
   },
 }
