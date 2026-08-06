@@ -36,6 +36,15 @@ if OS.mac?
 end
 ####################
 
+######### Linux Specific
+if OS.linux?
+  # Formulas
+  %w[
+    wl-clipboard
+  ].each { |name| brew name }
+end
+####################
+
 # Casks
 %w[
   terraform-linters/tap/tflint
