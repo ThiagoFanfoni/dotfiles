@@ -10,7 +10,11 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-require("nvim.spellfile").config({ confirm = false })
+local spellfile = require("nvim.spellfile")
+spellfile.config({ confirm = false })
+if #vim.api.nvim_get_runtime_file("spell/pt.utf-8.spl", true) == 0 then
+  spellfile.get("pt")
+end
 
 vim.opt.spell = true
 
