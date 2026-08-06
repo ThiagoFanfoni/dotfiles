@@ -1,5 +1,4 @@
-autoload -U +X bashcompinit && bashcompinit
-
+typeset -U path PATH
 path=(
   "${HOME}/.local/bin"
   "${KREW_ROOT:-$HOME/.krew}/bin"
@@ -10,6 +9,8 @@ case "$(uname -s)" in
 Darwin)
   if [[ -d /opt/homebrew/opt/ruby/bin ]]; then
     path=(/opt/homebrew/opt/ruby/bin $path)
+  elif [[ -d /usr/local/opt/ruby/bin ]]; then
+    path=(/usr/local/opt/ruby/bin $path)
   fi
   ;;
 Linux)
@@ -29,6 +30,7 @@ export SHOW_AWS_PROMPT=false
 
 ZSH_THEME="robbyrussell"
 zstyle :omz:plugins:ssh-agent quiet yes
+zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
   aws
@@ -75,4 +77,7 @@ function aws-region() {
 
 command -v bat &>/dev/null && alias cat='bat -p'
 command -v nvim &>/dev/null && alias vim='nvim'
-command -v terragrunt &>/dev/null && complete -o nospace -C "$(command -v terragrunt)" terragrunt
+if command -v terragrunt &>/dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C "$(command -v terragrunt)" terragrunt
+fi
