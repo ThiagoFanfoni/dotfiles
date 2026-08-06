@@ -10,6 +10,8 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+require("nvim.spellfile").config({ confirm = false })
+
 vim.opt.spell = true
 
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
