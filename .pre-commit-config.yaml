@@ -19,6 +19,14 @@ repos:
     hooks:
       - id: luacheck
 
+  - repo: local
+    hooks:
+      - id: stylua
+        name: stylua
+        entry: stylua --check
+        language: system
+        types: [lua]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -38,10 +46,3 @@ repos:
 
       - id: pretty-format-json
         args: ["--autofix"]
-
-
-  - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v4.4.0
-    hooks:
-      - id: conventional-pre-commit
-        stages: [commit-msg]
