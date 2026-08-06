@@ -12,6 +12,7 @@
 !**/.kube/config
 
 # Others
-**/.docker/contexts
+**/**.log
 **/.config/gcloud/
+**/.docker/contexts
 **/.ssh/environment-*
