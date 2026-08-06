@@ -1,97 +1,117 @@
 # frozen_string_literal: true
 
-tap 'aws/tap'
-tap 'hashicorp/tap'
-tap 'siderolabs/tap'
-tap 'terraform-linters/tap'
+# Taps
+%w[
+  aws/tap
+  hashicorp/tap
+  siderolabs/tap
+  terraform-linters/tap
+].each { |name| tap name }
 
+######### MAC Specific
 if OS.mac?
-  brew 'mas'
+  # Formulas
+  %w[
+    mas
+  ].each { |name| brew name }
 
-  cask 'appcleaner'
-  cask 'balenaetcher'
-  cask 'brave-browser'
-  cask 'caffeine'
-  cask 'codex'
-  cask 'codex-app'
-  cask 'drawio'
-  cask 'ghostty'
-  cask 'google-chrome'
-  cask 'keeper-password-manager'
-  cask 'logi-options+'
-  cask 'microsoft-teams'
-  cask 'music-decoy'
-  cask 'onedrive'
-  cask 'session-manager-plugin'
+  # Casks
+  %w[
+    appcleaner
+    balenaetcher
+    brave-browser
+    caffeine
+    codex
+    codex-app
+    drawio
+    ghostty
+    google-chrome
+    keeper-password-manager
+    logi-options+
+    microsoft-teams
+    music-decoy
+    onedrive
+    session-manager-plugin
+  ].each { |name| cask name }
 end
+####################
 
-cask 'terraform-linters/tap/tflint'
+# Casks
+%w[
+  terraform-linters/tap/tflint
+].each { |name| cask name }
 
-krew 'browse-pvc'
-krew 'edit-secret'
-krew 'explore'
-krew 'krew'
-krew 'node-shell'
-krew 'node-ssm'
-krew 'nodepools'
-krew 'pv-migrate'
-krew 'pv-mounter'
-krew 'view-secret'
+# Formulas
+%w[
+  ansible
+  ast-grep
+  aws-iam-authenticator
+  awscli
+  awslogs
+  awsume
+  azure-cli
+  bat
+  black
+  cilium-cli
+  colima
+  composer
+  docker
+  docker-credential-helper-ecr
+  fd
+  fzf
+  gcc
+  ghostscript
+  git-remote-codecommit
+  gitleaks
+  go
+  hashicorp/tap/terraform
+  helm
+  imagemagick
+  jq
+  kind
+  krew
+  kubectx
+  kustomize
+  lazygit
+  luacheck
+  luarocks
+  mandoc
+  mermaid-cli
+  neovim
+  node
+  pipx
+  pre-commit
+  prettier
+  python
+  ripgrep
+  ruby
+  rust
+  siderolabs/tap/talosctl
+  sshpass
+  stow
+  stylua
+  tectonic
+  terraform-docs
+  terragrunt
+  tfsec
+  tree-sitter-cli
+  unzip
+  viddy
+  whois
+  yq
+  zip
+].each { |name| brew name }
 
-brew 'ansible'
-brew 'ast-grep'
-brew 'aws-iam-authenticator'
-brew 'awscli'
-brew 'awslogs'
-brew 'awsume'
-brew 'azure-cli'
-brew 'bat'
-brew 'black'
-brew 'cilium-cli'
-brew 'colima'
-brew 'composer'
-brew 'docker'
-brew 'docker-credential-helper-ecr'
-brew 'fd'
-brew 'fzf'
-brew 'gcc'
-brew 'ghostscript'
-brew 'git-remote-codecommit'
-brew 'gitleaks'
-brew 'go'
-brew 'hashicorp/tap/terraform'
-brew 'helm'
-brew 'imagemagick'
-brew 'jq'
-brew 'kind'
-brew 'krew'
-brew 'kubectx'
-brew 'kustomize'
-brew 'lazygit'
-brew 'luacheck'
-brew 'luarocks'
-brew 'mandoc'
-brew 'mermaid-cli'
-brew 'neovim'
-brew 'node'
-brew 'pipx'
-brew 'pre-commit'
-brew 'prettier'
-brew 'python'
-brew 'ripgrep'
-brew 'ruby'
-brew 'rust'
-brew 'siderolabs/tap/talosctl'
-brew 'sshpass'
-brew 'stow'
-brew 'stylua'
-brew 'tectonic'
-brew 'terraform-docs'
-brew 'terragrunt'
-brew 'tfsec'
-brew 'tree-sitter-cli'
-brew 'unzip'
-brew 'viddy'
-brew 'whois'
-brew 'yq'
-brew 'zip'
+# Krew
+%w[
+  browse-pvc
+  edit-secret
+  explore
+  krew
+  node-shell
+  node-ssm
+  nodepools
+  pv-migrate
+  pv-mounter
+  view-secret
+].each { |name| krew name }
