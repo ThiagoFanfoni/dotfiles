@@ -26,6 +26,7 @@ config.yml
 lazygit
 config
 sdkman-init.sh
+<<<<<<< HEAD
 lualine
 fileformat
 lualine.setup
@@ -111,3 +112,8 @@ wincmd
 gcm-core
 Kubernetes
 AWS
+=======
+Terraform
+Kubernetes
+macOS
+>>>>>>> 3817e34 (chore(nvim): expand custom spell dictionary)
