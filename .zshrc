@@ -64,6 +64,28 @@ function lazygit() {
   command lazygit --use-config-file="${HOME}/.config/lazygit/config.yml" "$@"
 }
 
+function brew-bundle() {
+  if [[ "${OSTYPE}" != darwin* ]]; then
+    command brew bundle "$@"
+    return
+  fi
+
+  sudo -v || return
+
+  while sudo -n true 2>/dev/null; do
+    sleep 60
+  done &
+  local sudo_keepalive_pid=$!
+
+  command brew bundle "$@"
+  local bundle_status=$?
+
+  kill "${sudo_keepalive_pid}" 2>/dev/null
+  wait "${sudo_keepalive_pid}" 2>/dev/null
+
+  return "${bundle_status}"
+}
+
 function aws-profile() {
   asp $(aws_profiles | fzf)
 }
