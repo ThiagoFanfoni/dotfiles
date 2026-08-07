@@ -89,6 +89,7 @@ end
   neovim
   node
   pipx
+  poppler
   pre-commit
   prettier
   python
