@@ -17,7 +17,6 @@ if #vim.api.nvim_get_runtime_file("spell/pt.utf-8.spl", true) == 0 then
 end
 
 vim.opt.spell = true
-
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
 vim.opt.spelllang = { "en_us", "pt_br" }
 
