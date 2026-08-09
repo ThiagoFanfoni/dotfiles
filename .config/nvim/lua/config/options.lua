@@ -21,13 +21,19 @@ vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
 vim.opt.spelllang = { "en_us", "pt_br" }
 
 vim.g.clipboard = {
-  name = "osc52",
+  name = "osc52-copy-only",
   copy = {
     ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
+  -- Passing empty functions prevents Neovim from polling the terminal for text
+  -- when an image is present, eliminating the synchronous hang bug.
   paste = {
-    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    ["+"] = function()
+      return { "", "" }
+    end,
+    ["*"] = function()
+      return { "", "" }
+    end,
   },
 }
