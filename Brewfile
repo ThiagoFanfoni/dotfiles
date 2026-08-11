@@ -51,6 +51,7 @@ end
   awsume
   azure-cli
   bat
+  bind
   black
   cilium-cli
   colima
@@ -78,6 +79,7 @@ end
   mandoc
   mermaid-cli
   neovim
+  netcat
   node
   pipx
   poppler
