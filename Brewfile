@@ -44,7 +44,6 @@ end
 # Formulas
 %w[
   ansible
-  ast-grep
   aws-iam-authenticator
   awscli
   awslogs
@@ -52,10 +51,8 @@ end
   azure-cli
   bat
   bind
-  black
   cilium-cli
   colima
-  composer
   docker
   docker-credential-helper-ecr
   fd
@@ -63,7 +60,6 @@ end
   gcc
   ghostscript
   git-remote-codecommit
-  gitleaks
   go
   hashicorp/tap/terraform
   helm
@@ -84,7 +80,6 @@ end
   pipx
   poppler
   pre-commit
-  prettier
   python
   ripgrep
   ruby
@@ -93,7 +88,6 @@ end
   sshpass
   stow
   stylua
-  tectonic
   terraform-docs
   terragrunt
   tfsec
