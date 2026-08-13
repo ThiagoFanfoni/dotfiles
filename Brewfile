@@ -91,6 +91,7 @@ end
   terraform-docs
   terragrunt
   tfsec
+  tio
   tree-sitter-cli
   unzip
   utftex
