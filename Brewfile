@@ -22,7 +22,6 @@ if OS.mac?
     balenaetcher
     brave-browser
     caffeine
-    codex-app
     drawio
     ghostty
     google-chrome
