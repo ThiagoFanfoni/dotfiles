@@ -4,9 +4,9 @@
 %w[
   aws/tap
   hashicorp/tap
+  openai/tools
   siderolabs/tap
   terraform-linters/tap
-  openai/tools
 ].each { |name| tap name }
 
 ######### MAC Specific
@@ -31,14 +31,15 @@ if OS.mac?
     microsoft-teams
     music-decoy
     session-manager-plugin
+    whatsapp
   ].each { |name| cask name }
 end
 ####################
 
 # Casks
 %w[
-  terraform-linters/tap/tflint
   codex
+  terraform-linters/tap/tflint
 ].each { |name| cask name }
 
 # Formulas
