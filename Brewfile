@@ -26,11 +26,11 @@ if OS.mac?
     drawio
     ghostty
     google-chrome
+    google-drive
     keeper-password-manager
     logi-options+
     microsoft-teams
     music-decoy
-    onedrive
     session-manager-plugin
   ].each { |name| cask name }
 end
