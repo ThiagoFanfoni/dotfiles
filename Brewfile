@@ -6,6 +6,7 @@
   hashicorp/tap
   siderolabs/tap
   terraform-linters/tap
+  openai/tools
 ].each { |name| tap name }
 
 ######### MAC Specific
@@ -21,7 +22,6 @@ if OS.mac?
     balenaetcher
     brave-browser
     caffeine
-    codex
     codex-app
     drawio
     ghostty
@@ -39,6 +39,7 @@ end
 # Casks
 %w[
   terraform-linters/tap/tflint
+  codex
 ].each { |name| cask name }
 
 # Formulas

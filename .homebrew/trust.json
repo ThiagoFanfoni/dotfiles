@@ -9,6 +9,7 @@
   "trustedtaps": [
     "aws/tap",
     "hashicorp/tap",
+    "openai/tools",
     "siderolabs/tap",
     "terraform-linters/tap"
   ]
