@@ -23,6 +23,7 @@ Linux)
 esac
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
+export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
 export EDITOR=nvim
 export SDKMAN_DIR="${HOME}/.sdkman"
 export ZSH="${HOME}/.oh-my-zsh"
