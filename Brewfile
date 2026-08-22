@@ -52,6 +52,7 @@ end
   azure-cli
   bat
   bind
+  checkov
   cilium-cli
   colima
   docker
