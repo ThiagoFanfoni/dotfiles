@@ -33,6 +33,10 @@ if OS.mac?
     session-manager-plugin
     whatsapp
   ].each { |name| cask name }
+
+  {
+    'WireGuard' => 1_451_685_025
+  }.each { |name, id| mas name, id: id }
 end
 ####################
 
