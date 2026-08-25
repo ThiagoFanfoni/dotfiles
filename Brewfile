@@ -24,6 +24,7 @@ if OS.mac?
     caffeine
     drawio
     ghostty
+    git-credential-manager
     google-chrome
     google-drive
     keeper-password-manager
