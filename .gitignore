@@ -14,5 +14,6 @@
 # Others
 **/**.log
 **/.config/gcloud/
+**/.config/icedtea-web/
 **/.docker/contexts
 **/.ssh/environment-*
