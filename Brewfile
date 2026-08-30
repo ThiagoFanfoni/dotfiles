@@ -20,6 +20,7 @@ if OS.mac?
   %w[
     appcleaner
     balenaetcher
+    batfi
     brave-browser
     caffeine
     drawio
@@ -68,7 +69,6 @@ end
   ghostscript
   git-remote-codecommit
   go
-  hashicorp/tap/terraform
   helm
   imagemagick
   jq
@@ -81,6 +81,7 @@ end
   luarocks
   mandoc
   mermaid-cli
+  mise
   neovim
   netcat
   node
