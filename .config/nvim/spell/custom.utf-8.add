@@ -531,3 +531,6 @@ ve
 talosconfig
 kubeconfig
 talosctl
+zsh
+MacOS
+Chrome.app
