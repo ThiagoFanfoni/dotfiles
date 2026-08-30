@@ -30,3 +30,8 @@ tflint = "latest"
 tfsec = "latest"
 tree-sitter = "latest"
 trivy = "latest"
+
+[settings]
+log_level = "error"
+minimum_release_age = "24h"
+terminal_progress = true
