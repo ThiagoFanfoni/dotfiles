@@ -40,6 +40,7 @@ export EDITOR=nvim
 export SDKMAN_DIR="${HOME}/.sdkman"
 export ZSH="${HOME}/.oh-my-zsh"
 export SHOW_AWS_PROMPT=false
+export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
 ZSH_THEME="robbyrussell"
 zstyle :omz:plugins:ssh-agent quiet yes
