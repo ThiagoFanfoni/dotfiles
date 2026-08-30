@@ -1,16 +1,8 @@
 {
-  "trustedcasks": [
-    "terraform-linters/tap/tflint"
-  ],
-  "trustedformulae": [
-    "hashicorp/tap/terraform",
-    "siderolabs/tap/talosctl"
-  ],
+  "trustedcasks": [],
+  "trustedformulae": [],
   "trustedtaps": [
     "aws/tap",
-    "hashicorp/tap",
-    "openai/tools",
-    "siderolabs/tap",
-    "terraform-linters/tap"
+    "openai/tools"
   ]
 }

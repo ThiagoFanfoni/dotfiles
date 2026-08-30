@@ -3,10 +3,7 @@
 # Taps
 %w[
   aws/tap
-  hashicorp/tap
   openai/tools
-  siderolabs/tap
-  terraform-linters/tap
 ].each { |name| tap name }
 
 ######### MAC Specific
@@ -45,21 +42,13 @@ end
 # Casks
 %w[
   codex
-  terraform-linters/tap/tflint
 ].each { |name| cask name }
 
 # Formulas
 %w[
-  ansible
-  aws-iam-authenticator
-  awscli
-  awslogs
   awsume
-  azure-cli
   bat
   bind
-  checkov
-  cilium-cli
   colima
   docker
   docker-credential-helper-ecr
@@ -67,40 +56,22 @@ end
   fzf
   gcc
   ghostscript
-  git-remote-codecommit
-  go
-  helm
   imagemagick
   jq
-  kind
   krew
   kubectx
-  kustomize
   lazygit
   luacheck
   luarocks
   mandoc
-  mermaid-cli
   mise
   neovim
   netcat
-  node
-  pipx
   poppler
-  pre-commit
-  python
   ripgrep
-  ruby
-  rust
-  siderolabs/tap/talosctl
   sshpass
   stow
-  stylua
-  terraform-docs
-  terragrunt
-  tfsec
   tio
-  tree-sitter-cli
   unzip
   utftex
   viddy

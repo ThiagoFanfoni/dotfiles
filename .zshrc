@@ -12,6 +12,10 @@ Darwin)
   elif [[ -d /usr/local/opt/ruby/bin ]]; then
     path=(/usr/local/opt/ruby/bin $path)
   fi
+
+  if [[ -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]]; then
+    export PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  fi
   ;;
 Linux)
   alias fix_kbd='setxkbmap us -variant intl &> /dev/null'
@@ -19,6 +23,14 @@ Linux)
   if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
+
+  for browser in google-chrome-stable google-chrome chromium; do
+    if command -v "${browser}" &>/dev/null; then
+      export PUPPETEER_EXECUTABLE_PATH="$(command -v "${browser}")"
+      break
+    fi
+  done
+  unset browser
   ;;
 esac
 
