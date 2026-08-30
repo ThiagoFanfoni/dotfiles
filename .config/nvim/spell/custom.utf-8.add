@@ -534,3 +534,14 @@ talosctl
 zsh
 MacOS
 Chrome.app
+cd
+dotfiles
+terraform
+zshrc
+Brewfile
+neovim
+krew
+git-credentials
+config.toml
+self-update
+tfsec
