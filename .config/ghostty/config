@@ -5,7 +5,6 @@ window-save-state = always
 # window-width = 1920
 # window-height = 1080
 theme = "TokyoNight Moon"
-minimum-contrast = 4.5
 
 # Mouse settings
 mouse-hide-while-typing = true
