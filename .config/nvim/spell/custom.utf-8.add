@@ -545,3 +545,4 @@ git-credentials
 config.toml
 self-update
 tfsec
+gitconfig
