@@ -4,10 +4,6 @@ minimum_release_age = "24h"
 terminal_progress = true
 
 [tools]
-"aqua:neovim/neovim" = "latest"
-"npm:@mermaid-js/mermaid-cli" = "latest"
-"pipx:awslogs" = "latest"
-"pipx:git-remote-codecommit" = "latest"
 actionlint = "latest"
 amazon-ecr-credential-helper = "latest"
 ansible = "latest"
@@ -34,6 +30,8 @@ kubens = "latest"
 kustomize = "latest"
 lazygit = "latest"
 lua = { version = "latest"}
+mermaid-ascii = "latest"
+neovim = "latest"
 node = "latest"
 pipx = "latest"
 pre-commit = "latest"

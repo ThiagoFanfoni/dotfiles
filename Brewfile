@@ -44,6 +44,7 @@ end
   krew
   luacheck
   mandoc
+  mermaid-cli
   mise
   netcat
   poppler
