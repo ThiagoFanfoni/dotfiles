@@ -33,6 +33,7 @@ if OS.mac?
     whatsapp
   ].each { |name| cask name }
 
+  # Apple Store
   {
     'WireGuard' => 1_451_685_025
   }.each { |name, id| mas name, id: id }
