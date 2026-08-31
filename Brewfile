@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-# Taps
-%w[
-  aws/tap
-  openai/tools
-].each { |name| tap name }
-
 ######### MAC Specific
 if OS.mac?
   # Formulas
@@ -45,40 +39,26 @@ end
   codex
 ].each { |name| cask name }
 
-# Formulas
+# System and bootstrap formulas
 %w[
   awsume
-  bat
   bind
   colima
-  docker
-  docker-credential-helper-ecr
-  fd
-  fzf
   gcc
   ghostscript
   imagemagick
-  jq
   krew
-  kubectx
-  lazygit
-  luacheck
-  luarocks
   mandoc
   mise
-  neovim
   netcat
   poppler
-  ripgrep
   sshpass
   stow
   tio
   unzip
   utftex
-  viddy
   wget
   whois
-  yq
   zip
 ].each { |name| brew name }
 

@@ -20,12 +20,6 @@ export PUPPETEER_EXECUTABLE_PATH="${commands[google-chrome-stable]:-/Application
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
-if (( ${+commands[nvim]} )); then
-  export EDITOR=nvim
-else
-  export EDITOR=vi
-fi
-export VISUAL="${EDITOR}"
 export ZSH="${HOME}/.oh-my-zsh"
 export SHOW_AWS_PROMPT=false
 export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
@@ -33,6 +27,13 @@ export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 if (( ${+commands[mise]} )); then
   eval "$(mise activate zsh)"
 fi
+
+if (( ${+commands[nvim]} )); then
+  export EDITOR=nvim
+else
+  export EDITOR=vi
+fi
+export VISUAL="${EDITOR}"
 
 ZSH_THEME="robbyrussell"
 zstyle :omz:plugins:ssh-agent quiet yes

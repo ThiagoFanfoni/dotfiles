@@ -1,8 +1,5 @@
 {
   "trustedcasks": [],
   "trustedformulae": [],
-  "trustedtaps": [
-    "aws/tap",
-    "openai/tools"
-  ]
+  "trustedtaps": []
 }
