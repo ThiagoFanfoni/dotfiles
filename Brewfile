@@ -36,7 +36,6 @@ end
 
 # System and bootstrap formulas
 %w[
-  awsume
   bind
   colima
   gcc
