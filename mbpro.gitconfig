@@ -1,9 +1,19 @@
+# vim: set ft=gitconfig:
+
 [user]
   name = ThiagoFanfoni
   email = 33901202+ThiagoFanfoni@users.noreply.github.com
 
 [init]
   defaultBranch = main
+
+[credential]
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+
 [pull]
 	rebase = true
 
@@ -16,8 +26,3 @@
 
 [mergetool "nvim"]
 	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
-[credential]
-	helper =
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
