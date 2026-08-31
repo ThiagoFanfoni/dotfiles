@@ -43,6 +43,7 @@ end
   ghostscript
   imagemagick
   krew
+  luacheck
   mandoc
   mise
   netcat

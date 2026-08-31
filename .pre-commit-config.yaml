@@ -18,7 +18,6 @@ repos:
     rev: v1.0.0
     hooks:
       - id: luacheck
-        entry: mise exec -- luacheck --
 
   - repo: local
     hooks:
