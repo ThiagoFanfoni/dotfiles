@@ -34,11 +34,6 @@ if OS.mac?
 end
 ####################
 
-# Casks
-%w[
-  codex
-].each { |name| cask name }
-
 # System and bootstrap formulas
 %w[
   awsume
