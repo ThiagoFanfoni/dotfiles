@@ -5,68 +5,56 @@ path=(
   $path
 )
 
-case "$(uname -s)" in
-Darwin)
-  if [[ -d /opt/homebrew/opt/ruby/bin ]]; then
-    path=(/opt/homebrew/opt/ruby/bin $path)
-  elif [[ -d /usr/local/opt/ruby/bin ]]; then
-    path=(/usr/local/opt/ruby/bin $path)
-  fi
-
-  if [[ -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]]; then
-    export PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-  fi
-  ;;
-Linux)
-  alias fix_kbd='setxkbmap us -variant intl &> /dev/null'
-
-  if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-
-  for browser in google-chrome-stable google-chrome chromium; do
-    if command -v "${browser}" &>/dev/null; then
-      export PUPPETEER_EXECUTABLE_PATH="$(command -v "${browser}")"
-      break
-    fi
+if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
+  for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+    [[ -x "${brew}" ]] || continue
+    eval "$("${brew}" shellenv)"
+    break
   done
-  unset browser
-  ;;
-esac
+  unset brew
+fi
+
+[[ "${OSTYPE}" == linux* ]] && alias fix_kbd='setxkbmap us -variant intl'
+
+export PUPPETEER_EXECUTABLE_PATH="${commands[google-chrome-stable]:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
-export EDITOR=nvim
-export SDKMAN_DIR="${HOME}/.sdkman"
+if (( ${+commands[nvim]} )); then
+  export EDITOR=nvim
+else
+  export EDITOR=vi
+fi
+export VISUAL="${EDITOR}"
 export ZSH="${HOME}/.oh-my-zsh"
 export SHOW_AWS_PROMPT=false
 export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
+if (( ${+commands[mise]} )); then
+  eval "$(mise activate zsh)"
+fi
+
 ZSH_THEME="robbyrussell"
 zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent lifetime 4h
 zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
-  aws
-  azure
-  docker
-  fzf
-  gcloud
-  git
-  git-auto-fetch
-  helm
-  kubectx
-  ssh-agent
-  terraform
-  urltools
+  ${commands[aws]:+aws}
+  ${commands[az]:+azure}
+  ${commands[docker]:+docker}
+  ${commands[fzf]:+fzf}
+  ${commands[git]:+git}
+  ${commands[helm]:+helm}
+  ${commands[kubectl]:+kubectx}
+  ${commands[ssh-agent]:+ssh-agent}
+  ${commands[terraform]:+terraform}
+  ${commands[node]:+urltools}
 )
 
 if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
   source "${ZSH}/oh-my-zsh.sh"
-fi
-
-if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
-  source "${HOME}/.sdkman/bin/sdkman-init.sh"
 fi
 
 function aws-clear() {
@@ -79,6 +67,9 @@ function lazygit() {
 }
 
 function brew-bundle() {
+  local bundle_status=1
+  local sudo_keepalive_pid
+
   if [[ "${OSTYPE}" != darwin* ]]; then
     command brew bundle "$@"
     return
@@ -89,35 +80,56 @@ function brew-bundle() {
   while sudo -n true 2>/dev/null; do
     sleep 60
   done &
-  local sudo_keepalive_pid=$!
+  sudo_keepalive_pid=$!
 
-  command brew bundle "$@"
-  local bundle_status=$?
-
-  kill "${sudo_keepalive_pid}" 2>/dev/null
-  wait "${sudo_keepalive_pid}" 2>/dev/null
+  {
+    command brew bundle "$@"
+    bundle_status=$?
+  } always {
+    kill "${sudo_keepalive_pid}" 2>/dev/null
+    wait "${sudo_keepalive_pid}" 2>/dev/null
+  }
 
   return "${bundle_status}"
 }
 
 function aws-profile() {
-  asp $(aws_profiles | fzf)
+  local profile
+
+  profile=$(aws_profiles | fzf) || return
+  [[ -n "${profile}" ]] || return 1
+
+  asp "${profile}"
 }
 
 function aws-region() {
-  if [[ ! -f ~/.aws/regions ]]; then
-    touch ~/.aws/regions
+  local region
+  local regions_file="${HOME}/.aws/regions"
+
+  if [[ ! -e "${regions_file}" ]]; then
+    mkdir -p "${HOME}/.aws" || return
+    touch "${regions_file}" || return
   fi
-  asr $(fzf <~/.aws/regions)
+
+  if [[ ! -s "${regions_file}" ]]; then
+    print -u2 "aws-region: add one region per line to ${regions_file}"
+    return 1
+  fi
+
+  region=$(fzf <"${regions_file}") || return
+  [[ -n "${region}" ]] || return 1
+
+  asr "${region}"
 }
 
-command -v bat &>/dev/null && alias cat='bat -p'
-command -v nvim &>/dev/null && alias vim='nvim'
-if command -v terragrunt &>/dev/null; then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C "$(command -v terragrunt)" terragrunt
-fi
+(( ${+commands[bat]} )) && alias cat='bat -p'
+(( ${+commands[nvim]} )) && alias vim='nvim'
 
-if command -v mise &>/dev/null; then
-  eval "$(mise activate zsh)"
+if (( ${+commands[terragrunt]} )); then
+  if (( ! ${+functions[complete]} )); then
+    autoload -U +X compinit && compinit
+    autoload -U +X bashcompinit && bashcompinit
+  fi
+
+  complete -o nospace -C "${commands[terragrunt]}" terragrunt
 fi
