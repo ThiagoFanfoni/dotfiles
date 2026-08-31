@@ -11,9 +11,8 @@ Aponte erros de gramática, ortografia, pontuação, concordância, regência e 
 Ignore diferenças de capitalização ao sugerir correções. Não aponte o uso de maiúsculas ou minúsculas, inclusive no início de frases e na grafia de nomes próprios, marcas, produtos ou projetos.
 
 Para cada correção, apresente:
-- Original: o que escrevi
-- Correção: uma versão melhor
-- Motivo: uma explicação curta e didática
+- Uma tabela Markdown com duas colunas: `Campo` e `Texto`.
+- Para cada correção, use linhas separadas para `Original`, `Correção` e `Motivo`, mantendo esse formato vertical para facilitar a comparação entre o original e a correção.
 
 Diferencie claramente um erro objetivo de uma sugestão de estilo. Nunca apresente uma preferência estilística como regra gramatical. Preserve meu significado, tom e grau de formalidade.
 
