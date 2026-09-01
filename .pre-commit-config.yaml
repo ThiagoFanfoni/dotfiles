@@ -2,36 +2,77 @@ default_install_hook_types:
   - pre-commit
   - commit-msg
 
+fail_fast: false
+minimum_pre_commit_version: "3.2.0"
+
 repos:
+  # Configuration integrity
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+        name: Check Hook Applicability
+      - id: check-useless-excludes
+        name: Check Hook Exclusions
+
   # General file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
+      # Repository safeguards
       - id: check-added-large-files
+        name: Check Added File Sizes
       - id: check-case-conflict
-      - id: check-json
+        name: Check Filename Case Conflicts
       - id: check-merge-conflict
-      - id: check-xml
+        name: Check Merge Conflicts
+      - id: check-symlinks
+        name: Check Broken Symlinks
+      - id: destroyed-symlinks
+        name: Check Destroyed Symlinks
+
+      # Normalization
+      - id: mixed-line-ending
+        name: Normalize Line Endings
+      - id: end-of-file-fixer
+        name: Fix End-of-File Newlines
+      - id: trailing-whitespace
+        name: Trim Trailing Whitespace
+      - id: pretty-format-json
+        name: Format JSON
+        args: [--autofix]
+
+      # Syntax validation
+      - id: check-json
+        name: Validate JSON
+      - id: check-toml
+        name: Validate TOML
       - id: check-yaml
+        name: Validate YAML
+
+      # Security
       - id: detect-aws-credentials
+        name: Detect AWS Credentials
         args: [--allow-missing-credentials]
       - id: detect-private-key
-      - id: end-of-file-fixer
-      - id: mixed-line-ending
-      - id: pretty-format-json
-        args: [--autofix]
-      - id: trailing-whitespace
+        name: Detect Private Keys
 
-  # Lua
+  # Language validation
   - repo: https://github.com/Calinou/pre-commit-luacheck
     rev: v1.0.0
     hooks:
       - id: luacheck
+        name: Lint Lua
 
   - repo: local
     hooks:
+      - id: zsh-syntax
+        name: Validate Zsh Syntax
+        entry: zsh -n
+        language: system
+        files: '(^|/)\.zshrc$|\.zsh$'
+
       - id: stylua
-        name: stylua
+        name: Check Lua Formatting
         entry: stylua --check
         language: system
         types: [lua]
@@ -41,10 +82,12 @@ repos:
     rev: v8.30.0
     hooks:
       - id: gitleaks
+        name: Detect Hardcoded Secrets
 
   # Commit messages
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v4.4.0
     hooks:
       - id: conventional-pre-commit
+        name: Validate Conventional Commit Message
         stages: [commit-msg]
