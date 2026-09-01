@@ -546,3 +546,9 @@ config.toml
 self-update
 tfsec
 gitconfig
+terraform-talos-cluster
+ThiagoFanfoni
+github
+img.shields.io
+talos-cluster
+registry.terraform.io
