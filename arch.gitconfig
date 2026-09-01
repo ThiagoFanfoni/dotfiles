@@ -1,29 +1,9 @@
 # vim: set ft=gitconfig:
 
-[user]
-  name = ThiagoFanfoni
-  email = 33901202+ThiagoFanfoni@users.noreply.github.com
-
-[init]
-  defaultBranch = main
+[include]
+	path = ~/.dotfiles/common.gitconfig
 
 [credential]
 	helper =
 	helper = /usr/sbin/git-credential-manager
 	credentialStore = secretservice
-
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-
-[pull]
-	rebase = true
-
-[merge]
-	tool = "nvim"
-
-[mergetool]
-	keepBackup = false
-	prompt = false
-
-[mergetool "nvim"]
-	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
