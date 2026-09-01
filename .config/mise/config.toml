@@ -10,7 +10,7 @@ ansible = "latest"
 ast-grep = "latest"
 aws-iam-authenticator = "latest"
 awscli = { version = "latest" }
-azure-cli = "latest"
+azure = { version = "latest", uvx_args = "--prerelease=allow --with pip" }
 bat = "latest"
 checkov = "latest"
 cilium-cli = "latest"
