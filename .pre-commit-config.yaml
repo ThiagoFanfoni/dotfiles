@@ -3,17 +3,26 @@ default_install_hook_types:
   - commit-msg
 
 repos:
-  - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v4.4.0
+  # General file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
     hooks:
-      - id: conventional-pre-commit
-        stages: [commit-msg]
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-xml
+      - id: check-yaml
+      - id: detect-aws-credentials
+        args: [--allow-missing-credentials]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: trailing-whitespace
 
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.30.0
-    hooks:
-      - id: gitleaks
-
+  # Lua
   - repo: https://github.com/Calinou/pre-commit-luacheck
     rev: v1.0.0
     hooks:
@@ -27,23 +36,15 @@ repos:
         language: system
         types: [lua]
 
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+  # Secrets
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
     hooks:
-      - id: check-added-large-files
-      - id: check-case-conflict
-      - id: check-json
-      - id: check-merge-conflict
-      - id: check-xml
-      - id: check-yaml
-      - id: detect-private-key
-      - id: end-of-file-fixer
-        exclude: ^\.codex/AGENTS\.md$
-      - id: mixed-line-ending
-      - id: trailing-whitespace
+      - id: gitleaks
 
-      - id: detect-aws-credentials
-        args: ["--allow-missing-credentials"]
-
-      - id: pretty-format-json
-        args: ["--autofix"]
+  # Commit messages
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
