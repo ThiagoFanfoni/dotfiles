@@ -9,7 +9,6 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
-vim.opt.spell = true
 
 local spellfile = require("nvim.spellfile")
 spellfile.config({ confirm = false })
@@ -19,6 +18,7 @@ end
 
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
 vim.opt.spelllang = { "en_us", "pt_br" }
+vim.opt.spelloptions:append("camel")
 
 if vim.fn.has("mac") == 0 then
   vim.g.clipboard = {
