@@ -38,6 +38,7 @@ repos:
       - id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer
+        exclude: ^\.codex/AGENTS\.md$
       - id: mixed-line-ending
       - id: trailing-whitespace
 
