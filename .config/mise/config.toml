@@ -11,6 +11,8 @@ ast-grep = "latest"
 aws-iam-authenticator = "latest"
 awscli = { version = "latest" }
 azure = { version = "latest", uvx_args = "--prerelease=allow --with pip" }
+azure-functions-core-tools = "latest"
+azure-kubelogin = "latest"
 bat = "latest"
 checkov = "latest"
 cilium-cli = "latest"
