@@ -95,6 +95,10 @@ if (( ${+commands[terragrunt]} && ${+functions[complete]} )); then
   complete -o nospace -C "${commands[terragrunt]}" terragrunt
 fi
 
+if (( ${+commands[kustomize]} && ${+functions[complete]} )); then
+  source <(kustomize completion zsh)
+fi
+
 # Functions
 
 aws-clear() {
