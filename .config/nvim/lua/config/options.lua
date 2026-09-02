@@ -13,7 +13,6 @@ local spellfile = require("nvim.spellfile")
 spellfile.config({ confirm = false })
 
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
-vim.opt.spelllang = { "en_us", "pt_br" }
 vim.opt.spelloptions:append("camel")
 
 if vim.fn.has("mac") == 0 then
