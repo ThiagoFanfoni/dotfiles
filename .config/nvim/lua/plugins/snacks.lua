@@ -1,9 +1,7 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    animate = { enabled = false },
     dashboard = { enabled = false },
-    explorer = { replace_netrw = false },
 
     picker = {
       sources = {
