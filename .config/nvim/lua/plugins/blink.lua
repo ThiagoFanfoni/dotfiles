@@ -1,20 +1,51 @@
 return {
   "saghen/blink.cmp",
+
+  init = function()
+    vim.keymap.set("c", "<Esc>", "<C-c>", {
+      noremap = true,
+    })
+  end,
+
   opts = {
-    signature = { enabled = true },
+    sources = {
+      providers = {
+        snippets = {
+          opts = {
+            friendly_snippets = false,
+          },
+        },
+      },
+    },
+
+    signature = {
+      enabled = true,
+    },
 
     keymap = {
-      preset = "enter",
-      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      preset = "super-tab",
+
+      ["<Up>"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
       ["<Esc>"] = { "cancel", "fallback" },
     },
 
-    completion = {
-      list = {
-        selection = {
-          preselect = false,
-          auto_insert = true,
+    cmdline = {
+      keymap = {
+        preset = "inherit",
+      },
+
+      completion = {
+        -- ghost_text = { enabled = true },
+        menu = {
+          auto_show = true,
+        },
+
+        list = {
+          selection = {
+            preselect = true,
+            auto_insert = true,
+          },
         },
       },
     },
