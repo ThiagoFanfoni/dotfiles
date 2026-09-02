@@ -27,6 +27,15 @@ return {
 
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
+
+      ["<C-l>"] = { "show", "hide" },
+
+      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+
+      ["<C-k>"] = { "show_documentation", "hide_documentation" },
+
+      ["<C-e>"] = { "cancel", "fallback" },
       ["<Esc>"] = { "cancel", "fallback" },
     },
 
