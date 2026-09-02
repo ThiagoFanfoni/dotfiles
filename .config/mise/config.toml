@@ -10,7 +10,7 @@ ansible = "latest"
 ast-grep = "latest"
 aws-iam-authenticator = "latest"
 awscli = { version = "latest" }
-azure = { version = "latest", uvx_args = "--prerelease=allow --with pip" }
+azure = { version = "latest" }
 azure-functions-core-tools = "latest"
 azure-kubelogin = "latest"
 bat = "latest"
