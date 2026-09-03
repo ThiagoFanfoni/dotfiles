@@ -1,10 +1,15 @@
 # Paths
 
 typeset -U path PATH
+typeset -U fpath FPATH
 path=(
   "${HOME}/.local/bin"
   "${KREW_ROOT:-$HOME/.krew}/bin"
   $path
+)
+fpath=(
+  "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
+  $fpath
 )
 
 if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
