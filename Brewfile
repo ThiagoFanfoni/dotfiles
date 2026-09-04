@@ -93,7 +93,6 @@ end
   talosctl
   terraform-docs
   terragrunt
-  tfsec
   tio
   tree-sitter-cli
   trivy
