@@ -21,6 +21,10 @@ if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   unset brew
 fi
 
+if [[ -d "$(brew --prefix)/share/google-cloud-sdk" ]]; then
+  export CLOUDSDK_HOME="$(brew --prefix)/share/google-cloud-sdk"
+fi
+
 # Environment
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
@@ -34,15 +38,6 @@ export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
 if (( ${+commands[mise]} )); then
   eval "$(mise activate zsh)"
-fi
-
-if (( ${+commands[gcloud]} )) && [[ -z "${CLOUDSDK_HOME:-}" ]]; then
-  # Resolve mise's gcloud executable from bin/gcloud to the SDK root.
-  gcloud_sdk_home="${commands[gcloud]:A:h:h}"
-  if [[ -r "${gcloud_sdk_home}/completion.zsh.inc" ]]; then
-    export CLOUDSDK_HOME="${gcloud_sdk_home}"
-  fi
-  unset gcloud_sdk_home
 fi
 
 if (( ${+commands[nvim]} )); then
@@ -81,20 +76,6 @@ if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
 fi
 
 ## Additional completions
-
-if (( ${+commands[az]} && ${+functions[compdef]} )); then
-  # Cache completion separately for each mise-managed Azure CLI version.
-  az_completion_cache="${ZSH_CACHE_DIR}/az-${commands[az]:A:h:h:h:h:t}.zsh"
-
-  if [[ ! -s "${az_completion_cache}" ]]; then
-    # Avoid clashing with gcloud's function of the same name.
-    "${commands[az]:A:h}/register-python-argcomplete" --shell zsh az \
-      | sed 's/_python_argcomplete/_az_python_argcomplete/g' >| "${az_completion_cache}"
-  fi
-
-  source "${az_completion_cache}"
-  unset az_completion_cache
-fi
 
 if (( ${+commands[terragrunt]} && ${+functions[complete]} )); then
   complete -o nospace -C "${commands[terragrunt]}" terragrunt

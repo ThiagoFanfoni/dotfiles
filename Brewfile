@@ -7,7 +7,7 @@ if OS.mac?
     mas
   ].each { |name| brew name }
 
-  # Casks
+  # Mac Casks
   %w[
     appcleaner
     balenaetcher
@@ -34,27 +34,75 @@ if OS.mac?
 end
 ####################
 
+# System and bootstrap casks
+%w[
+  codex
+  gcloud-cli
+  terraform-linters/tap/tflint
+].each { |name| cask name }
+
 # System and bootstrap formulas
 %w[
+  actionlint
+  ansible
+  ast-grep
+  aws-iam-authenticator
+  awscli
+  azure-cli
+  bat
   bind
+  checkov
+  cilium-cli
   colima
+  docker
+  fd
+  fzf
   gcc
+  gh
   ghostscript
+  gitleaks
+  go
+  hashicorp/tap/terraform
+  helm
+  helm-docs
   imagemagick
+  java
+  jq
+  kind
   krew
+  kubectl
+  kubectx
+  kustomize
+  lazygit
+  lua
   luacheck
   mandoc
   mermaid-cli
   mise
+  neovim
   netcat
+  node
   poppler
+  pre-commit
+  ripgrep
+  ruby
+  rust
   sshpass
   stow
+  stylua
+  talosctl
+  terraform-docs
+  terragrunt
+  tfsec
   tio
+  tree-sitter-cli
+  trivy
   unzip
   utftex
+  viddy
   wget
   whois
+  yq
   zip
 ].each { |name| brew name }
 
