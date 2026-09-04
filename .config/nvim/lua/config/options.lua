@@ -15,7 +15,11 @@ spellfile.config({ confirm = false })
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
 vim.opt.spelloptions:append("camel")
 
-if vim.fn.has("mac") == 0 then
+local function is_crostini()
+  return vim.fn.isdirectory("/mnt/chromeos") == 1 or vim.fn.filereadable("/dev/.cros_milestone") == 1
+end
+
+if is_crostini() then
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
