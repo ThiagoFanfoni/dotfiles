@@ -91,7 +91,7 @@ end
   sshpass
   stow
   stylua
-  talosctl
+  siderolabs/tap/talosctl
   terraform-docs
   terragrunt
   tio

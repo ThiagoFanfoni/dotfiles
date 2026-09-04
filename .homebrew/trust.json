@@ -8,6 +8,7 @@
   "trustedtaps": [
     "aws/tap",
     "hashicorp/tap",
+    "siderolabs/tap",
     "terraform-linters/tap"
   ]
 }
