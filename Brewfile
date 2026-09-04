@@ -55,6 +55,7 @@ end
   cilium-cli
   colima
   docker
+  docker-compose
   fd
   fzf
   gcc
