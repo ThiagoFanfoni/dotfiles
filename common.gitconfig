@@ -8,17 +8,17 @@
   defaultBranch = main
 
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+  useHttpPath = true
 
 [pull]
-	rebase = true
+  rebase = true
 
 [merge]
-	tool = "nvim"
+  tool = "nvim"
 
 [mergetool]
-	keepBackup = false
-	prompt = false
+  keepBackup = false
+  prompt = false
 
 [mergetool "nvim"]
-	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+  cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
