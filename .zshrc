@@ -7,10 +7,10 @@ path=(
   "${KREW_ROOT:-$HOME/.krew}/bin"
   $path
 )
-# fpath=(
-#   "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
-#   $fpath
-# )
+fpath=(
+  "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
+  $fpath
+)
 
 if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
@@ -60,22 +60,11 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
-  # ${commands[ansible]:+ansible}
-  # ${commands[aws]:+aws}
-  # ${commands[az]:+azure}
-  # ${commands[gh]:+gh}
-  # ${commands[git]:+git}
-  # ${commands[helm]:+helm}
-  # ${commands[kind]:+kind}
   ${commands[docker-compose]:+docker-compose}
-  ${commands[docker]:+docker}
   ${commands[fzf]:+fzf}
   ${commands[fzf]:+zsh-interactive-cd}
   ${commands[gcloud]:+gcloud}
   ${commands[go]:+golang}
-  ${commands[kubectl]:+kubectx}
-  ${commands[node]:+urltools}
-  ${commands[pre-commit]:+pre-commit}
   ${commands[ssh-agent]:+ssh-agent}
   ${commands[terraform]:+terraform}
   ${commands[tofu]:+opentofu}
