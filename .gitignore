@@ -2,19 +2,20 @@
 .Identifier
 
 # AWS
-**/.aws/*
-!**/.aws/
-!**/.aws/config
+.aws/
+
+# Codex
+.codex/
+!.codex/AGENTS.md
 
 # Kubernetes
 **/.kube/*
-!**/.kube/
 !**/.kube/config
 
 # Others
 **/**.log
-**/.config/gcloud/
-**/.config/gh/
-**/.config/icedtea-web/
-**/.docker/contexts
-**/.ssh/environment-*
+.config/gcloud/
+.config/gh/
+.config/icedtea-web/
+.docker/contexts
+.ssh/environment-*
