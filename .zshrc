@@ -60,6 +60,7 @@ zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
   ${commands[aws]:+aws}
+  ${commands[docker-compose]:+docker-compose}
   ${commands[docker]:+docker}
   ${commands[fzf]:+fzf}
   ${commands[gcloud]:+gcloud}
