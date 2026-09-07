@@ -1,9 +1,5 @@
 # vim: set ft=gitconfig:
 
-[user]
-  name = ThiagoFanfoni
-  email = 33901202+ThiagoFanfoni@users.noreply.github.com
-
 [init]
   defaultBranch = main
 
