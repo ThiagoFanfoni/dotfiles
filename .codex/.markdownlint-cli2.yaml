@@ -1,0 +1,5 @@
+config:
+  # Keep instruction paragraphs on single lines.
+  MD013: false
+  # Allow each instruction category to have a top-level heading.
+  MD025: false
