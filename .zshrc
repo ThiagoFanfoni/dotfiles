@@ -7,10 +7,10 @@ path=(
   "${KREW_ROOT:-$HOME/.krew}/bin"
   $path
 )
-fpath=(
-  "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
-  $fpath
-)
+# fpath=(
+#   "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
+#   $fpath
+# )
 
 if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   for brew in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
