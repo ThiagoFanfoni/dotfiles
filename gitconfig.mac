@@ -1,7 +1,7 @@
 # vim: set ft=gitconfig:
 
 [include]
-  path = ~/.dotfiles/common.gitconfig
+  path = ~/.dotfiles/gitconfig.common
 
 [credential]
   helper =

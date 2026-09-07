@@ -1,9 +1,9 @@
 # vim: set ft=gitconfig:
 
 [include]
-  path = ~/.dotfiles/common.gitconfig
+  path = ~/.dotfiles/gitconfig.common
 
 [credential]
   helper =
-  helper = /usr/local/bin/git-credential-manager
+  helper = /usr/sbin/git-credential-manager
   credentialStore = secretservice
