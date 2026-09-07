@@ -36,7 +36,6 @@ end
 
 # System and bootstrap casks
 %w[
-  codex
   gcloud-cli
   terraform-linters/tap/tflint
 ].each { |name| cask name }
