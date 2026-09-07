@@ -77,6 +77,7 @@ end
   lua
   luacheck
   mandoc
+  markdownlint-cli2
   mermaid-cli
   mise
   neovim
@@ -87,10 +88,10 @@ end
   ripgrep
   ruby
   rust
+  siderolabs/tap/talosctl
   sshpass
   stow
   stylua
-  siderolabs/tap/talosctl
   terraform-docs
   terragrunt
   tio
