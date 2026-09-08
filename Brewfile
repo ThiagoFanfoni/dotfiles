@@ -18,12 +18,9 @@ if OS.mac?
     ghostty
     git-credential-manager
     google-chrome
-    google-drive
     keeper-password-manager
-    openlogi
-    microsoft-teams
     music-decoy
-    session-manager-plugin
+    openlogi
     whatsapp
   ].each { |name| cask name }
 
