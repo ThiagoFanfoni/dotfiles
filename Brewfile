@@ -20,7 +20,7 @@ if OS.mac?
     google-chrome
     google-drive
     keeper-password-manager
-    logi-options+
+    openlogi
     microsoft-teams
     music-decoy
     session-manager-plugin

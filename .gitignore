@@ -12,6 +12,10 @@
 **/.kube/*
 !**/.kube/config
 
+# OpenLogi
+/.config/openlogi/*
+!.config/openlogi/config.toml
+
 # Others
 **/**.log
 .config/gcloud/
