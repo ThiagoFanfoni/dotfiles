@@ -21,6 +21,7 @@ if OS.mac?
     keeper-password-manager
     music-decoy
     openlogi
+    session-manager-plugin
     whatsapp
   ].each { |name| cask name }
 

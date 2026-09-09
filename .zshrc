@@ -6,6 +6,7 @@ path=(
   "${HOME}/.local/bin"
   "${KREW_ROOT:-$HOME/.krew}/bin"
   $path
+
 )
 # fpath=(
 #   "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
