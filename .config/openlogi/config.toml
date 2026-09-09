@@ -1,5 +1,5 @@
 schema_version = 7
-selected_device = "serial:2318ce06e838"
+selected_device = "serial:2128lz53btp8"
 
 [app_settings]
 launch_at_login = true
@@ -22,6 +22,9 @@ device_view_mode = "grid"
 
 [devices."serial:2128lz53btp8"]
 invert_scroll = true
+scroll_resolution = "low"
+dpi = 1200
+thumbwheel_sensitivity = 15
 
 [devices."serial:2128lz53btp8".identity]
 display_name = "MX Master 3 B"
@@ -91,6 +94,11 @@ enabled = false
 haptics = true
 
 [devices."serial:2128lz53btp8".action_ring.default]
+
+[devices."serial:2128lz53btp8".smartshift]
+mode = "ratchet"
+auto_disengage = 15
+tunable_torque = 0
 
 [devices."serial:2128lz53btp8".bindings]
 DpiToggle = "ToggleSmartShift"
