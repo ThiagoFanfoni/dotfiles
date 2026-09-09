@@ -61,6 +61,7 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
+  ${commands[aws]:+aws}
   ${commands[docker-compose]:+docker-compose}
   ${commands[fzf]:+fzf}
   ${commands[fzf]:+zsh-interactive-cd}
