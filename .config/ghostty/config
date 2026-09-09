@@ -11,7 +11,7 @@ mouse-hide-while-typing = true
 copy-on-select = true
 
 # Font and cursor settings
-font-family = MesloLGDZ
+# font-family = MesloLGDZ
 # font-size = 15
 cursor-style = block
 
