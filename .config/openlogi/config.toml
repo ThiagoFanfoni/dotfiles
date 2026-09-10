@@ -1,5 +1,5 @@
 schema_version = 7
-selected_device = "serial:2128lz53btp8"
+selected_device = "serial:2318ce06e838"
 
 [app_settings]
 launch_at_login = true
