@@ -102,6 +102,7 @@ end
   whois
   yq
   zip
+  zoxide
 ].each { |name| brew name }
 
 # Krew
