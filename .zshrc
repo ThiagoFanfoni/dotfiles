@@ -64,7 +64,6 @@ plugins=(
   ${commands[aws]:+aws}
   ${commands[docker-compose]:+docker-compose}
   ${commands[fzf]:+fzf}
-  ${commands[fzf]:+zsh-interactive-cd}
   ${commands[gcloud]:+gcloud}
   ${commands[go]:+golang}
   ${commands[ssh-agent]:+ssh-agent}
