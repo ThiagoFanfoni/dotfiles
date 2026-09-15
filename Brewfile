@@ -60,6 +60,7 @@ end
   ghostscript
   gitleaks
   go
+  gosec
   hashicorp/tap/terraform
   helm
   helm-docs
