@@ -4,6 +4,7 @@ typeset -U path PATH
 typeset -U fpath FPATH
 path=(
   "${HOME}/.local/bin"
+  "${HOME}/go/bin/"
   "${KREW_ROOT:-$HOME/.krew}/bin"
   $path
 
