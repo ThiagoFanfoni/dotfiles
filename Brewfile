@@ -88,6 +88,7 @@ end
   rust
   siderolabs/tap/talosctl
   sshpass
+  staticcheck
   stow
   stylua
   terraform-docs
