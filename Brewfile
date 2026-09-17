@@ -60,6 +60,7 @@ end
   ghostscript
   gitleaks
   go
+  goose
   gosec
   hashicorp/tap/terraform
   helm
@@ -97,6 +98,7 @@ end
   tio
   tree-sitter-cli
   trivy
+  tursodatabase/tap/turso
   unzip
   utftex
   viddy
