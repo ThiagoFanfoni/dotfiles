@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+# Taps
+%w[
+  aws/tap
+  hashicorp/tap
+  siderolabs/tap
+  terraform-linters/tap
+].each { |name| tap name }
+
 ######### MAC Specific
 if OS.mac?
   # Formulas
