@@ -98,7 +98,6 @@ end
   tio
   tree-sitter-cli
   trivy
-  tursodatabase/tap/turso
   unzip
   utftex
   viddy

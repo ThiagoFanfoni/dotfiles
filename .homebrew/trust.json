@@ -4,15 +4,12 @@
   ],
   "trustedformulae": [
     "hashicorp/tap/terraform",
-    "libsql/sqld/sqld",
-    "siderolabs/tap/talosctl",
-    "tursodatabase/tap/turso"
+    "siderolabs/tap/talosctl"
   ],
   "trustedtaps": [
     "aws/tap",
     "hashicorp/tap",
     "siderolabs/tap",
-    "terraform-linters/tap",
-    "tursodatabase/tap/"
+    "terraform-linters/tap"
   ]
 }
