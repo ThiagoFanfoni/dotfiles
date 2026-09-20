@@ -159,3 +159,4 @@ lazygit() {
 (( ${+commands[bat]} )) && alias cat='bat -p'
 (( ${+commands[lsd]} )) && alias ls='lsd'
 (( ${+commands[setxkbmap]} )) && alias fix_kbd='setxkbmap us -variant intl'
+(( ${+commands[zoxide]} )) && alias cd='z'
