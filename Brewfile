@@ -82,6 +82,7 @@ end
   kubectx
   kustomize
   lazygit
+  lsd
   lua
   luacheck
   mandoc
