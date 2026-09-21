@@ -10,12 +10,11 @@
   rebase = true
 
 [merge]
-  tool = "nvim"
+    tool = nvimdiff
 
 [mergetool]
-  keepBackup = false
-  prompt = false
+    prompt = false
+    keepBackup = false
 
-[mergetool "nvim"]
-  cmd = 'nvim -d -c "wincmd l" -c "norm ]c" "$LOCAL" "$MERGED" "$REMOTE"'
-  trustExitCode = true
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffviewOpen" "$MERGE"
