@@ -60,6 +60,7 @@ end
   cilium-cli
   colima
   docker
+  docker-buildx
   docker-compose
   fd
   fzf
