@@ -93,6 +93,7 @@ end
   neovim
   netcat
   node
+  pipx
   poppler
   pre-commit
   ripgrep
