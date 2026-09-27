@@ -70,6 +70,7 @@ plugins=(
   ${commands[ssh-agent]:+ssh-agent}
   ${commands[terraform]:+terraform}
   ${commands[tofu]:+opentofu}
+  ${commands[virtualenvwrapper.sh]:+virtualenvwrapper}
   ${commands[zoxide]:+zoxide}
 )
 
