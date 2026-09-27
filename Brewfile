@@ -112,6 +112,7 @@ end
   utftex
   uv
   viddy
+  virtualenvwrapper
   wget
   whois
   yq
