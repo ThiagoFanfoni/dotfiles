@@ -110,6 +110,7 @@ end
   trivy
   unzip
   utftex
+  uv
   viddy
   wget
   whois
