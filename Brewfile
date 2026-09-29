@@ -18,7 +18,6 @@ if OS.mac?
   # Mac Casks
   %w[
     appcleaner
-    balenaetcher
     batfi
     brave-browser
     caffeine
