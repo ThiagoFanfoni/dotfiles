@@ -26,6 +26,7 @@ if OS.mac?
     git-credential-manager
     google-chrome
     keeper-password-manager
+    keka
     music-decoy
     openlogi
     session-manager-plugin
