@@ -1,23 +1,19 @@
-**/lazy-lock.json
+lazy-lock.json
 .Identifier
-
-# AWS
-.aws/
+.DS_Store
+._*
 
 # Codex
-.codex/
-!.codex/AGENTS.md
-
-# Kubernetes
-**/.kube/*
-!**/.kube/config
+/.codex/*
+!/.codex/AGENTS.md
+!/.codex/.markdownlint-cli2.yaml
 
 # OpenLogi
 /.config/openlogi/*
 !.config/openlogi/config.toml
 
 # Others
-**/**.log
+*.log
 .config/gcloud/
 .config/gh/
 .config/icedtea-web/
