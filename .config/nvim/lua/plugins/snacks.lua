@@ -6,8 +6,8 @@ return {
     picker = {
       sources = {
         explorer = {
-          hidden = true,
-          ignored = true,
+          hidden = false,
+          ignored = false,
           exclude = { "node_modules", ".git" },
           actions = {
             bufadd = function(_, item)
