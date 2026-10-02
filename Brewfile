@@ -27,8 +27,8 @@ if OS.mac?
     google-chrome
     keeper-password-manager
     keka
+    logi-options+
     music-decoy
-    openlogi
     session-manager-plugin
     whatsapp
   ].each { |name| cask name }
