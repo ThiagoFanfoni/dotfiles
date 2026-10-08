@@ -58,6 +58,7 @@ end
   bind
   checkov
   cilium-cli
+  cocogitto
   colima
   docker
   docker-buildx
