@@ -42,6 +42,7 @@ end
 
 # System and bootstrap casks
 %w[
+  azure-cli
   gcloud-cli
   terraform-linters/tap/tflint
 ].each { |name| cask name }
@@ -53,7 +54,6 @@ end
   ast-grep
   aws-iam-authenticator
   awscli
-  azure-cli
   bat
   bind
   checkov
