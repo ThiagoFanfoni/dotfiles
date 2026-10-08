@@ -94,6 +94,7 @@ end
   neovim
   netcat
   node
+  opentofu
   pipx
   poppler
   pre-commit
