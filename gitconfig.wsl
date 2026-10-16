@@ -1,0 +1,8 @@
+# vim: set ft=gitconfig:
+
+[include]
+  path = ~/.dotfiles/gitconfig.common
+
+[credential]
+  helper =
+  helper = /mnt/c/Users/thiag/scoop/shims/git-credential-manager.exe
