@@ -38,11 +38,11 @@ export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
 
 export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
-if (( ${+commands[mise]} )); then
+if ((${+commands[mise]})); then
   eval "$(mise activate zsh)"
 fi
 
-if (( ${+commands[nvim]} )); then
+if ((${+commands[nvim]})); then
   export EDITOR='nvim'
   alias vim='nvim'
 else
@@ -63,11 +63,11 @@ zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
   ${commands[aws]:+aws}
-  ${commands[docker-compose]:+docker-compose}
+  ${commands[docker - compose]:+docker-compose}
   ${commands[fzf]:+fzf}
   ${commands[gcloud]:+gcloud}
   ${commands[go]:+golang}
-  ${commands[ssh-agent]:+ssh-agent}
+  ${commands[ssh - agent]:+ssh-agent}
   ${commands[terraform]:+terraform}
   ${commands[tofu]:+opentofu}
   ${commands[virtualenvwrapper.sh]:+virtualenvwrapper}
@@ -80,11 +80,11 @@ fi
 
 ## Additional completions
 
-if (( ${+commands[terragrunt]} && ${+functions[complete]} )); then
+if ((${+commands[terragrunt]} && ${+functions[complete]})); then
   complete -o nospace -C "${commands[terragrunt]}" terragrunt
 fi
 
-if (( ${+commands[kustomize]} && ${+functions[compdef]} )); then
+if ((${+commands[kustomize]} && ${+functions[compdef]})); then
   source <("${commands[kustomize]}" completion zsh)
 fi
 
@@ -130,7 +130,7 @@ lazygit() {
 
 # Aliases
 
-(( ${+commands[bat]} )) && alias cat='bat -p'
-(( ${+commands[lsd]} )) && alias ls='lsd'
-(( ${+commands[setxkbmap]} )) && alias fix_kbd='setxkbmap us -variant intl'
-(( ${+commands[zoxide]} )) && alias cd='z'
+((${+commands[bat]})) && alias cat='bat -p'
+((${+commands[lsd]})) && alias ls='lsd'
+((${+commands[setxkbmap]})) && alias fix_kbd='setxkbmap us -variant intl'
+((${+commands[zoxide]})) && alias cd='z'
