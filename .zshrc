@@ -124,33 +124,6 @@ aws-region() {
   asr "${region}"
 }
 
-brew-bundle() {
-  local bundle_status=1
-  local sudo_keepalive_pid
-
-  if [[ "${OSTYPE}" != darwin* ]]; then
-    command brew bundle "$@"
-    return
-  fi
-
-  sudo -v || return
-
-  while sudo -n true 2>/dev/null; do
-    sleep 60
-  done &
-  sudo_keepalive_pid=$!
-
-  {
-    command brew bundle "$@"
-    bundle_status=$?
-  } always {
-    kill "${sudo_keepalive_pid}" 2>/dev/null
-    wait "${sudo_keepalive_pid}" 2>/dev/null
-  }
-
-  return "${bundle_status}"
-}
-
 lazygit() {
   command lazygit --use-config-file="${HOME}/.config/lazygit/config.yml" "$@"
 }
