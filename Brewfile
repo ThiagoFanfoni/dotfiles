@@ -53,6 +53,7 @@ end
   ansible
   ast-grep
   aws-iam-authenticator
+  aws/tap/eksctl
   awscli
   bat
   bind
@@ -60,6 +61,7 @@ end
   cilium-cli
   cocogitto
   colima
+  dnsglobe
   docker
   docker-buildx
   docker-compose
@@ -72,6 +74,7 @@ end
   go
   goose
   gosec
+  grex
   hashicorp/tap/terraform
   helm
   helm-docs
@@ -79,6 +82,7 @@ end
   java
   jq
   kind
+  kondo
   krew
   kubectl
   kubectx
@@ -95,6 +99,7 @@ end
   netcat
   node
   opentofu
+  oxker
   pipx
   poppler
   pre-commit
@@ -116,6 +121,7 @@ end
   uv
   viddy
   virtualenvwrapper
+  visidata
   wget
   whois
   yq
