@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   opts = function(_, opts)
     opts.formatters_by_ft.fish = nil
-    opts.formatters_by_ft.zsh = nil
+    opts.formatters_by_ft.zsh = { "shfmt" }
     opts.formatters_by_ft.hcl = { "terragrunt_hclfmt" }
     opts.formatters_by_ft["*"] = { "trim_whitespace", "trim_newlines" }
 
