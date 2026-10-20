@@ -103,6 +103,7 @@ end
   pipx
   poppler
   pre-commit
+  pwgen
   ripgrep
   ruby
   rust
