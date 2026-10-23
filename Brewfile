@@ -71,6 +71,7 @@ end
   gh
   ghostscript
   gitleaks
+  glab
   go
   goose
   gosec
