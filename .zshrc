@@ -1,7 +1,6 @@
-# Paths
-
 typeset -U path PATH
 typeset -U fpath FPATH
+
 path=(
   "${HOME}/.local/bin"
   "${HOME}/go/bin/"
@@ -9,6 +8,7 @@ path=(
   $path
 
 )
+
 # fpath=(
 #   "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
 #   $fpath
@@ -27,15 +27,8 @@ if [[ -d "$(brew --prefix)/share/google-cloud-sdk" ]]; then
   export CLOUDSDK_HOME="$(brew --prefix)/share/google-cloud-sdk"
 fi
 
-# Environment
-
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
-
-# Tool initialization
-
-## Runtime
-
 export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
 if ((${+commands[mise]})); then
@@ -48,14 +41,13 @@ if ((${+commands[nvim]})); then
 else
   export EDITOR=vi
 fi
+
 export VISUAL="${EDITOR}"
-
-## Oh My Zsh
-
 export SHOW_AWS_PROMPT=false
 export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
+
 zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent lazy yes
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -78,8 +70,6 @@ if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
   source "${ZSH}/oh-my-zsh.sh"
 fi
 
-## Additional completions
-
 if ((${+commands[terragrunt]} && ${+functions[complete]})); then
   complete -o nospace -C "${commands[terragrunt]}" terragrunt
 fi
@@ -87,8 +77,6 @@ fi
 if ((${+commands[kustomize]} && ${+functions[compdef]})); then
   source <("${commands[kustomize]}" completion zsh)
 fi
-
-# Functions
 
 aws-clear() {
   asr &>/dev/null
@@ -127,8 +115,6 @@ aws-region() {
 lazygit() {
   command lazygit --use-config-file="${HOME}/.config/lazygit/config.yml" "$@"
 }
-
-# Aliases
 
 ((${+commands[bat]})) && alias cat='bat -p'
 ((${+commands[lsd]})) && alias ls='lsd'
