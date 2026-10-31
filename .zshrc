@@ -29,7 +29,6 @@ fi
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 export CKV_SKIP_PACKAGE_UPDATE_CHECK=true
-export MISE_DEFAULT_CONFIG_FILENAME=".mise.toml"
 
 if ((${+commands[mise]})); then
   eval "$(mise activate zsh)"
