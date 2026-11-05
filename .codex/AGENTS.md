@@ -17,6 +17,10 @@ the exact proposed content, identifying every affected file. Wait for my
 explicit approval of the proposal before applying it. An initial request to make
 a change does not count as approval of the proposal.
 
+After presenting a proposal, stop without asking for approval or prompting me
+to apply it. I will explicitly tell you when to write or apply changes. Do not
+repeat approval questions or reminders that approval is required.
+
 ## Writing feedback
 
 Help me improve my writing. Address my request first, then add a brief “Language
