@@ -5,6 +5,9 @@ return {
 
     picker = {
       sources = {
+        keymaps = {
+          layout = { preview = false },
+        },
         explorer = {
           hidden = false,
           ignored = false,
