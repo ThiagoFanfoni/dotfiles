@@ -4,9 +4,32 @@ return {
     dashboard = { enabled = false },
 
     picker = {
+      layout = {
+        fullscreen = true,
+      },
       sources = {
         keymaps = {
           layout = { preview = false },
+        },
+        files = {
+          layout = {
+            config = function(layout)
+              local preview = layout.layout[2]
+              if preview and preview.win == "preview" then
+                preview.width = 0.8
+              end
+            end,
+          },
+        },
+        buffers = {
+          layout = {
+            config = function(layout)
+              local preview = layout.layout[2]
+              if preview and preview.win == "preview" then
+                preview.width = 0.7
+              end
+            end,
+          },
         },
         explorer = {
           hidden = false,
