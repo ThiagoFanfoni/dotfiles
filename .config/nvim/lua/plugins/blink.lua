@@ -28,6 +28,10 @@ return {
       },
     },
 
+    completion = {
+      keyword = { range = "full" },
+    },
+
     keymap = {
       preset = "super-tab",
 
