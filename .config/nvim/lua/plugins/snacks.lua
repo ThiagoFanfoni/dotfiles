@@ -1,5 +1,6 @@
 return {
   "folke/snacks.nvim",
+
   opts = {
     dashboard = { enabled = false },
 
@@ -7,20 +8,8 @@ return {
       layout = {
         fullscreen = true,
       },
+
       sources = {
-        keymaps = {
-          layout = { preview = false },
-        },
-        files = {
-          layout = {
-            config = function(layout)
-              local preview = layout.layout[2]
-              if preview and preview.win == "preview" then
-                preview.width = 0.8
-              end
-            end,
-          },
-        },
         buffers = {
           layout = {
             config = function(layout)
@@ -31,10 +20,8 @@ return {
             end,
           },
         },
+
         explorer = {
-          hidden = false,
-          ignored = false,
-          exclude = { "node_modules", ".git" },
           actions = {
             bufadd = function(_, item)
               if vim.fn.bufexists(item.file) == 0 then
@@ -43,6 +30,7 @@ return {
                 vim.api.nvim_buf_call(buf, vim.cmd.edit)
               end
             end,
+
             confirm_nofocus = function(picker, item)
               if item.dir then
                 picker:action("confirm")
@@ -51,34 +39,66 @@ return {
               end
             end,
           },
+
+          auto_close = true,
+          exclude = { "node_modules", ".git" },
+          hidden = false,
+          ignored = false,
+
+          layout = {
+            cycle = true,
+            layout = {
+              border = "rounded",
+              box = "horizontal",
+              height = 0.95,
+              position = "float",
+              width = 0,
+
+              {
+                box = "vertical",
+                min_width = 40,
+                width = 40,
+
+                {
+                  border = "single",
+                  height = 1,
+                  title = "{title} {live} {flags}",
+                  win = "input",
+                },
+                { win = "list" },
+              },
+              {
+                border = "left",
+                width = 0,
+                win = "preview",
+              },
+            },
+            preview = true, ---@diagnostic disable-line: assign-type-mismatch
+          },
+
           win = {
             list = {
               keys = {
-                ["l"] = "confirm_nofocus",
                 ["L"] = "confirm",
+                ["l"] = "confirm_nofocus",
               },
             },
           },
-          auto_close = true,
+        },
+
+        files = {
           layout = {
-            cycle = true,
-            preview = true, ---@diagnostic disable-line: assign-type-mismatch
-            layout = {
-              box = "horizontal",
-              position = "float",
-              height = 0.95,
-              width = 0,
-              border = "rounded",
-              {
-                box = "vertical",
-                width = 40,
-                min_width = 40,
-                { win = "input", height = 1, title = "{title} {live} {flags}", border = "single" },
-                { win = "list" },
-              },
-              { win = "preview", width = 0, border = "left" },
-            },
+            config = function(layout)
+              local preview = layout.layout[2]
+              if preview and preview.win == "preview" then
+                preview.width = 0.8
+              end
+            end,
           },
+        },
+
+        keymaps = {
+          layout = { preview = false },
         },
       },
     },

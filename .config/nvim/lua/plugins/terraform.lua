@@ -1,7 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
+
   opts = {
     codelens = { enabled = false },
+
     servers = {
       terraformls = {
         -- Override lspconfig's callback, which enables CodeLens on attachment.

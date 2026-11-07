@@ -8,52 +8,48 @@ return {
   end,
 
   opts = {
-    sources = {
-      providers = {
-        snippets = {
-          opts = {
-            friendly_snippets = false,
+    cmdline = {
+      completion = {
+        -- ghost_text = { enabled = true },
+        list = {
+          selection = {
+            auto_insert = true,
+            preselect = true,
           },
         },
+
+        menu = {
+          auto_show = true,
+        },
       },
+
+      keymap = {
+        preset = "inherit",
+      },
+    },
+
+    keymap = {
+      preset = "super-tab",
+
+      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+      ["<C-e>"] = { "cancel", "fallback" },
+      ["<C-k>"] = { "show_documentation", "hide_documentation" },
+      ["<C-l>"] = { "show", "hide" },
+      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
+      ["<Esc>"] = { "cancel", "fallback" },
+      ["<Up>"] = { "select_prev", "fallback" },
     },
 
     signature = {
       enabled = true,
     },
 
-    keymap = {
-      preset = "super-tab",
-
-      ["<Up>"] = { "select_prev", "fallback" },
-      ["<Down>"] = { "select_next", "fallback" },
-
-      ["<C-l>"] = { "show", "hide" },
-
-      ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-      ["<C-d>"] = { "scroll_documentation_down", "fallback" },
-
-      ["<C-k>"] = { "show_documentation", "hide_documentation" },
-
-      ["<C-e>"] = { "cancel", "fallback" },
-      ["<Esc>"] = { "cancel", "fallback" },
-    },
-
-    cmdline = {
-      keymap = {
-        preset = "inherit",
-      },
-
-      completion = {
-        -- ghost_text = { enabled = true },
-        menu = {
-          auto_show = true,
-        },
-
-        list = {
-          selection = {
-            preselect = true,
-            auto_insert = true,
+    sources = {
+      providers = {
+        snippets = {
+          opts = {
+            friendly_snippets = false,
           },
         },
       },

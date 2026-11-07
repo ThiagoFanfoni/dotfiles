@@ -1,6 +1,7 @@
 return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
+
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
         group = vim.api.nvim_create_augroup("markdown_plain_text", { clear = true }),
@@ -10,8 +11,10 @@ return {
         end,
       })
     end,
+
     opts = {
       enabled = false,
+
       win_options = {
         conceallevel = {
           default = 0,
