@@ -102,5 +102,14 @@ return {
         },
       },
     },
+
+    terminal = {
+      win = {
+        keys = {
+          nav_h = false,
+          nav_l = false,
+        },
+      },
+    },
   },
 }
