@@ -71,7 +71,16 @@ return {
 
       sections = {
         lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { "filename" },
+
+        lualine_c = {
+          {
+            "filename",
+            path = 3,
+            symbols = { modified = " ●", readonly = " " },
+            color = { gui = "bold" },
+          },
+        },
+
         lualine_x = {
           {
             lazy_status.updates,
@@ -79,12 +88,15 @@ return {
             cond = lazy_status.has_updates,
             icon = "", -- Icon for pending updates
           },
-          -- "encoding",
-          -- "fileformat",
           "filetype",
         },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
+        lualine_y = {
+          function()
+            return vim.api.nvim_buf_line_count(0) .. " lines"
+          end,
+        },
+
+        lualine_z = { "progress" },
       },
     })
   end,
