@@ -23,8 +23,8 @@ if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   unset brew
 fi
 
-if [[ -d "$(brew --prefix)/share/google-cloud-sdk" ]]; then
-  export CLOUDSDK_HOME="$(brew --prefix)/share/google-cloud-sdk"
+if [[ -n "${HOMEBREW_PREFIX:-}" && -d "${HOMEBREW_PREFIX}/share/google-cloud-sdk" ]]; then
+  export CLOUDSDK_HOME="${HOMEBREW_PREFIX}/share/google-cloud-sdk"
 fi
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
@@ -118,4 +118,6 @@ lazygit() {
 ((${+commands[bat]})) && alias cat='bat -p'
 ((${+commands[lsd]})) && alias ls='lsd'
 ((${+commands[setxkbmap]})) && alias fix_kbd='setxkbmap us -variant intl'
-((${+commands[zoxide]})) && alias cd='z'
+if ((${+commands[zoxide]})); then
+  alias cd='z'
+fi
