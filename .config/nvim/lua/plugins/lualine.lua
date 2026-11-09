@@ -5,7 +5,7 @@ return {
 
   config = function()
     local lualine = require("lualine")
-    local lazy_status = require("lazy.status") -- For lazy plugin updates
+    -- local lazy_status = require("lazy.status") -- For lazy plugin updates
 
     -- Color palette for lualine
     local colors = {
@@ -83,11 +83,27 @@ return {
 
         lualine_x = {
           {
-            lazy_status.updates,
-            color = { fg = "#ff9e64" },
-            cond = lazy_status.has_updates,
-            icon = "", -- Icon for pending updates
+            function()
+              ---@type { get: fun(): string? }
+              local mode = require("noice").api.status.mode
+              return mode.get()
+            end,
+            cond = function()
+              if not package.loaded["noice"] then
+                return false
+              end
+              ---@type { has: fun(): boolean }
+              local mode = require("noice").api.status.mode
+              return mode.has()
+            end,
+            color = { fg = colors.red },
           },
+          -- {
+          --   lazy_status.updates,
+          --   color = { fg = "#ff9e64" },
+          --   cond = lazy_status.has_updates,
+          --   icon = "", -- Icon for pending updates
+          -- },
           "filetype",
         },
         lualine_y = {
