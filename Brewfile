@@ -57,6 +57,7 @@ end
   awscli
   bat
   bind
+  bubblewrap
   checkov
   cilium-cli
   cocogitto
