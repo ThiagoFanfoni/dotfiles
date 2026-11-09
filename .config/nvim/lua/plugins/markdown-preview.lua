@@ -1,9 +1,11 @@
 return {
-  "iamcco/markdown-preview.nvim",
+  -- "iamcco/markdown-preview.nvim",
+  "sammaji/markdown-preview.nvim",
 
   init = function()
     vim.g.mkdp_auto_close = 0
     vim.g.mkdp_theme = "light"
+    vim.g.mkdp_theme_css = vim.fn.stdpath("config") .. "/styles/markdown-preview-github.css"
 
     vim.api.nvim_create_autocmd("BufDelete", {
       callback = function(args)
