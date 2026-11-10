@@ -116,6 +116,7 @@ lazygit() {
 }
 
 ((${+commands[bat]})) && alias cat='bat -p'
+((${+commands[codex]})) && alias codex='codex --no-alt-screen'
 ((${+commands[lsd]})) && alias ls='lsd'
 ((${+commands[setxkbmap]})) && alias fix_kbd='setxkbmap us -variant intl'
 if ((${+commands[zoxide]})); then
