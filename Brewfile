@@ -77,6 +77,7 @@ end
   goose
   gosec
   grex
+  hashicorp/tap/sentinel
   hashicorp/tap/terraform
   helm
   helm-docs
@@ -100,6 +101,7 @@ end
   neovim
   netcat
   node
+  opa
   opentofu
   oxker
   pipx

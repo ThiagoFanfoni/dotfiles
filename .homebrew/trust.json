@@ -4,6 +4,7 @@
   ],
   "trustedformulae": [
     "aws/tap/eksctl",
+    "hashicorp/tap/sentinel",
     "hashicorp/tap/terraform",
     "siderolabs/tap/talosctl"
   ],
