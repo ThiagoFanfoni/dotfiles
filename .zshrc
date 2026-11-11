@@ -53,16 +53,16 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'kubectl-*' 'kubectx_*'
 
 plugins=(
-  ${commands[aws]:+aws}
-  ${commands[docker - compose]:+docker-compose}
-  ${commands[fzf]:+fzf}
-  ${commands[gcloud]:+gcloud}
-  ${commands[go]:+golang}
-  ${commands[ssh - agent]:+ssh-agent}
-  ${commands[terraform]:+terraform}
-  ${commands[tofu]:+opentofu}
-  ${commands[virtualenvwrapper.sh]:+virtualenvwrapper}
-  ${commands[zoxide]:+zoxide}
+  ${commands[(e)aws]:+aws}
+  ${commands[(e)docker-compose]:+docker-compose}
+  ${commands[(e)fzf]:+fzf}
+  ${commands[(e)gcloud]:+gcloud}
+  ${commands[(e)go]:+golang}
+  ${commands[(e)ssh-agent]:+ssh-agent}
+  ${commands[(e)terraform]:+terraform}
+  ${commands[(e)tofu]:+opentofu}
+  ${commands[(e)virtualenvwrapper.sh]:+virtualenvwrapper}
+  ${commands[(e)zoxide]:+zoxide}
 )
 
 if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
