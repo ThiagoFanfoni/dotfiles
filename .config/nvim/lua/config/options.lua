@@ -12,6 +12,7 @@ vim.g.loaded_ruby_provider = 0
 local spellfile = require("nvim.spellfile")
 spellfile.config({ confirm = false })
 
+vim.opt.spelllang:append("pt_br")
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/custom.utf-8.add"
 vim.opt.spelloptions:append("camel")
 
