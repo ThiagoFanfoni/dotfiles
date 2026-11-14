@@ -15,6 +15,16 @@ return {
     routes = {
       {
         filter = {
+          event = "notify",
+          kind = "debug",
+          find = "^Suggestion file not available: pt%.utf%-8%.sug$",
+        },
+        opts = {
+          skip = true,
+        },
+      },
+      {
+        filter = {
           any = {
             {
               find = "pyright",
