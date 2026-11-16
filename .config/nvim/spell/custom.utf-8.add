@@ -274,3 +274,8 @@ rollout
 Telefónica
 markdownlint-disable
 markdownlint-enable
+Terraform's
+destroy-before-create
+Pv
+self-referencing
+deduplicates
