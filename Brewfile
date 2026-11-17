@@ -40,14 +40,12 @@ if OS.mac?
 end
 ####################
 
-# System and bootstrap casks
 %w[
   azure-cli
   gcloud-cli
   terraform-linters/tap/tflint
 ].each { |name| cask name }
 
-# System and bootstrap formulas
 %w[
   actionlint
   ansible
@@ -133,17 +131,3 @@ end
   zip
   zoxide
 ].each { |name| brew name }
-
-# Krew
-%w[
-  browse-pvc
-  edit-secret
-  explore
-  krew
-  node-shell
-  node-ssm
-  nodepools
-  pv-migrate
-  pv-mounter
-  view-secret
-].each { |name| krew name }
