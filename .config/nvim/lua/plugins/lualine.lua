@@ -1,8 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
 
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-
   opts = function(_, opts)
     -- local lazy_status = require("lazy.status") -- For lazy plugin updates
 
