@@ -1,8 +1,8 @@
 return {
   "folke/noice.nvim",
 
-  opts = {
-    lsp = {
+  opts = function(_, opts)
+    opts.lsp = vim.tbl_deep_extend("force", opts.lsp or {}, {
       signature = {
         opts = {
           size = {
@@ -10,9 +10,9 @@ return {
           },
         },
       },
-    },
+    })
 
-    routes = {
+    opts.routes = vim.list_extend(opts.routes or {}, {
       {
         filter = {
           event = "notify",
@@ -38,6 +38,6 @@ return {
           skip = true,
         },
       },
-    },
-  },
+    })
+  end,
 }

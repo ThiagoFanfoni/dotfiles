@@ -3,8 +3,7 @@ return {
 
   dependencies = { "nvim-tree/nvim-web-devicons" },
 
-  config = function()
-    local lualine = require("lualine")
+  opts = function(_, opts)
     -- local lazy_status = require("lazy.status") -- For lazy plugin updates
 
     -- Color palette for lualine
@@ -59,8 +58,7 @@ return {
       },
     }
 
-    -- Set up lualine with the modified theme and sections
-    lualine.setup({
+    return vim.tbl_deep_extend("force", opts, {
       extensions = { "lazy", "fzf" },
 
       options = {
