@@ -6,6 +6,7 @@ return {
 
     servers = {
       terraformls = {
+        cmd = { "terraform-ls", "serve", "-log-file=/dev/null" },
         -- Override lspconfig's callback, which enables CodeLens on attachment.
         on_attach = function(_, bufnr)
           if vim.lsp.codelens.enable then
