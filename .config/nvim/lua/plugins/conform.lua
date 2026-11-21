@@ -2,6 +2,7 @@ return {
   "stevearc/conform.nvim",
 
   opts = function(_, opts)
+    opts.log_level = vim.log.levels.OFF
     opts.formatters_by_ft.fish = nil
     opts.formatters_by_ft.hcl = function(bufnr)
       local filename = vim.api.nvim_buf_get_name(bufnr)
