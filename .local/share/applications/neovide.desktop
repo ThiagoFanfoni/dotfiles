@@ -2,7 +2,7 @@
 Type=Application
 Name=Neovide
 Comment=Graphical interface for Neovim
-Exec=/home/linuxbrew/.linuxbrew/bin/neovide --neovim-bin /home/linuxbrew/.linuxbrew/bin/nvim %F
+Exec=/usr/bin/env -u WAYLAND_DISPLAY PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin /home/linuxbrew/.linuxbrew/bin/neovide --neovim-bin /home/linuxbrew/.linuxbrew/bin/nvim %F
 Icon=/home/linuxbrew/.linuxbrew/opt/neovide/share/icons/hicolor/256x256/apps/neovide.png
 Terminal=false
 Categories=Utility;TextEditor;

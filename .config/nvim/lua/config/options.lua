@@ -31,6 +31,9 @@ end
 
 if is_crostini() then
   vim.g.neovide_theme = "dark"
+end
+
+if is_crostini() and not vim.g.neovide then
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {

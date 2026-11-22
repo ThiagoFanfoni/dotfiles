@@ -1,6 +1,10 @@
 typeset -U path PATH
 typeset -U fpath FPATH
 
+if [[ -d /mnt/chromeos || -r /dev/.cros_milestone ]]; then
+  unset WAYLAND_DISPLAY
+fi
+
 path=(
   "${HOME}/.local/bin"
   "${HOME}/go/bin/"
