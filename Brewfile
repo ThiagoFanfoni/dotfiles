@@ -40,6 +40,15 @@ if OS.mac?
 end
 ####################
 
+##### Linux Specific
+if OS.linux?
+  # Formulas
+  %w[
+    bubblewrap
+  ].each { |name| brew name }
+end
+
+####################
 %w[
   azure-cli
   gcloud-cli
@@ -55,7 +64,6 @@ end
   awscli
   bat
   bind
-  bubblewrap
   checkov
   cilium-cli
   cocogitto
