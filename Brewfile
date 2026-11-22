@@ -22,6 +22,7 @@ if OS.mac?
     brave-browser
     caffeine
     drawio
+    font-jetbrains-mono-nerd-font
     ghostty
     git-credential-manager
     google-chrome
