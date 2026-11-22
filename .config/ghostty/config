@@ -18,6 +18,7 @@ cursor-style = block
 # keyboard settings
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+keybind = super+s=text:\x13
 macos-option-as-alt = true
 clipboard-read = allow
 
