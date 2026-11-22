@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Neovide
+Comment=Graphical interface for Neovim
+Exec=/home/linuxbrew/.linuxbrew/bin/neovide --neovim-bin /home/linuxbrew/.linuxbrew/bin/nvim %F
+Icon=/home/linuxbrew/.linuxbrew/opt/neovide/share/icons/hicolor/256x256/apps/neovide.png
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/plain;
+StartupNotify=true
+StartupWMClass=neovide
