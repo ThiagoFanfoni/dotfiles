@@ -3,6 +3,7 @@ return {
 
   opts = {
     codelens = { enabled = false },
+    inlay_hints = { enabled = false },
 
     servers = {
       terraformls = {
