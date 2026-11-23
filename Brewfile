@@ -88,6 +88,7 @@ end
   hashicorp/tap/terraform
   helm
   helm-docs
+  iam-policy-json-to-terraform
   imagemagick
   java
   jq
